@@ -4,64 +4,557 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI Services</title>
+    <title>AI Solutions for Business</title>
+
+    <meta
+        name="description"
+        content="AI automation and digital solutions that help businesses save time and work smarter."
+    >
 
     <style>
-        body {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-            text-align: center;
+            padding: 0;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b16;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #7c6cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            color: #b8bfd3;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* HERO */
 
         .hero {
-            padding: 120px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(108, 92, 231, 0.25),
+                    transparent 40%
+                );
         }
 
-        h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
+        .hero-content {
+            max-width: 900px;
         }
 
-        p {
-            font-size: 20px;
-            color: #b8c0d9;
-        }
-
-        .button {
+        .tag {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background: #6c63ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            padding: 8px 15px;
+            border: 1px solid #292e48;
+            border-radius: 30px;
+            color: #aaa5ff;
+            font-size: 13px;
+            margin-bottom: 25px;
+            background: rgba(124, 108, 255, 0.08);
         }
 
-        .button:hover {
-            background: #554cff;
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
         }
+
+        .hero h1 span {
+            color: #8073ff;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: #aeb6ce;
+            font-size: 19px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #7061ff;
+        }
+
+        .btn-primary:hover {
+            background: #8275ff;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #343a55;
+            color: #d5d9e7;
+        }
+
+        .btn-secondary:hover {
+            border-color: #7061ff;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #969fb8;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #0c1020;
+        }
+
+        .service-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid #20263b;
+            border-radius: 14px;
+            background: #0f1425;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #5548c9;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #201b4d;
+            color: #958cff;
+            font-size: 22px;
+            margin-bottom: 22px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #929bb4;
+            font-size: 15px;
+        }
+
+        /* PROCESS */
+
+        .process-grid {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .number {
+            font-size: 14px;
+            color: #8275ff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #929bb4;
+            font-size: 15px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(112, 97, 255, 0.18),
+                    transparent 55%
+                );
+        }
+
+        .cta h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #9da6bd;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 7%;
+            border-top: 1px solid #1d2336;
+            text-align: center;
+            color: #69728a;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .service-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .cta h2 {
+                font-size: 35px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            AI<span>Works</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#process">How It Works</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
     <section class="hero">
 
-        <h1>AI Solutions for Modern Businesses</h1>
+        <div class="hero-content">
+
+            <div class="tag">
+                AI Solutions for Modern Business
+            </div>
+
+            <h1>
+                Make your business work <span>smarter.</span>
+            </h1>
+
+            <p>
+                We help businesses automate repetitive work,
+                improve productivity, and use AI to create better
+                ways of working.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Get Started
+                </a>
+
+                <a href="#services" class="btn btn-secondary">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="section-title">
+
+            <h2>
+                What We Can Do
+            </h2>
+
+            <p>
+                Practical AI solutions designed to solve real
+                business problems.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="card">
+
+                <div class="icon">⚙</div>
+
+                <h3>
+                    AI Automation
+                </h3>
+
+                <p>
+                    Automate repetitive business tasks and
+                    reduce the amount of manual work your team
+                    has to do.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">✦</div>
+
+                <h3>
+                    AI Chatbots
+                </h3>
+
+                <p>
+                    Build intelligent assistants that can
+                    answer questions and help customers
+                    around the clock.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">✎</div>
+
+                <h3>
+                    AI Content
+                </h3>
+
+                <p>
+                    Use AI to create, organize, and improve
+                    content while keeping your brand's voice
+                    consistent.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section id="process">
+
+        <div class="section-title">
+
+            <h2>
+                How It Works
+            </h2>
+
+            <p>
+                Simple, practical, and focused on results.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="step">
+
+                <div class="number">
+                    01
+                </div>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    We understand your business and identify
+                    where AI can make the biggest difference.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="number">
+                    02
+                </div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    We create an AI solution around your
+                    specific requirements.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="number">
+                    03
+                </div>
+
+                <h3>
+                    Launch
+                </h3>
+
+                <p>
+                    Your new system goes live and starts
+                    helping your business.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+
+        <h2>
+            Ready to work smarter?
+        </h2>
 
         <p>
-            We help businesses save time, automate tasks,
-            and grow using artificial intelligence.
+            Let's explore what AI can do for your business.
         </p>
 
-        <a href="#" class="button">
+        <a href="mailto:hello@example.com" class="btn btn-primary">
             Get Started
         </a>
 
     </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 AIWorks. All rights reserved.
+
+    </footer>
+
 
 </body>
 </html>
